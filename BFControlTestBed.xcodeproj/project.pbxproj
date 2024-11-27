@@ -26,8 +26,19 @@
 		71B628A32CF7464B00DF4E93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		71B628AD2CF74A6100DF4E93 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				BFEnhancedNumericEditor.swift,
+				BFNumericEditor.swift,
+			);
+			target = 71B628912CF7464900DF4E93 /* BFControlTestBed */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		71B628A92CF7466400DF4E93 /* Controls */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Controls; sourceTree = "<group>"; };
+		71B628A92CF7466400DF4E93 /* Controls */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (71B628AD2CF74A6100DF4E93 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Controls; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
