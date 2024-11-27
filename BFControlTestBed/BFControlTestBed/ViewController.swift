@@ -12,8 +12,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        chackBox.checkboxUnknowenType = .unknownCircle
     }
 
-
+    @IBOutlet weak var chackBox: BFCheckBox!
+   
+    @IBAction func chackBoxValueChanged(_ sender: Any) {
+    }
+    
+    
 }
 
