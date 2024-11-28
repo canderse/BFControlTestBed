@@ -12,7 +12,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BFControlTestBed" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="BFNunmericField" customModule="BFControlTestBed" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="440" height="956"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -44,11 +44,21 @@
                                     <action selector="chackBoxValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="1JF-46-LVM"/>
                                 </connections>
                             </view>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hOK-hn-dOc">
+                                <rect key="frame" x="68" y="79" width="100" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="gWu-ak-Liy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                         <constraints>
                             <constraint firstItem="7Un-Mn-W7t" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="6Vc-nv-loj"/>
+                            <constraint firstItem="hOK-hn-dOc" firstAttribute="leading" secondItem="7Un-Mn-W7t" secondAttribute="trailing" constant="16" id="N5E-3Q-wEj"/>
+                            <constraint firstItem="hOK-hn-dOc" firstAttribute="centerY" secondItem="7Un-Mn-W7t" secondAttribute="centerY" id="l4X-L6-Oby"/>
                             <constraint firstItem="7Un-Mn-W7t" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="uSh-tt-DTW"/>
                         </constraints>
                     </view>
