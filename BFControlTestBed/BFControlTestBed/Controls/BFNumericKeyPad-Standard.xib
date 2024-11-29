@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -10,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BFNumericKeyboard" customModule="BFControlTestBed" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BFNumericKeyPad" customModule="BFControlTestBed" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="348" height="198"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -32,6 +33,9 @@
                                                 <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 <color key="baseBackgroundColor" systemColor="systemBackgroundColor"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="buttonTouched:" destination="iN0-l3-epB" eventType="touchUpInside" id="nYZ-pj-K21"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FwQ-ou-48w">
                                             <rect key="frame" x="89" y="0.0" width="82" height="39.666666666666664"/>
@@ -42,6 +46,9 @@
                                                 <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 <color key="baseBackgroundColor" systemColor="systemBackgroundColor"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="buttonTouched:" destination="iN0-l3-epB" eventType="touchUpInside" id="Hc1-ut-5FP"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQM-cN-C0T">
                                             <rect key="frame" x="178" y="0.0" width="82" height="39.666666666666664"/>
@@ -52,6 +59,9 @@
                                                 <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 <color key="baseBackgroundColor" systemColor="systemBackgroundColor"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="buttonTouched:" destination="iN0-l3-epB" eventType="touchUpInside" id="id8-4l-bbc"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </stackView>
@@ -67,6 +77,9 @@
                                                 <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 <color key="baseBackgroundColor" systemColor="systemBackgroundColor"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="buttonTouched:" destination="iN0-l3-epB" eventType="touchUpInside" id="FJg-45-dn0"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9AR-24-rm1">
                                             <rect key="frame" x="88.666666666666657" y="0.0" width="82.666666666666657" height="40"/>
@@ -77,6 +90,9 @@
                                                 <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 <color key="baseBackgroundColor" systemColor="systemBackgroundColor"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="buttonTouched:" destination="iN0-l3-epB" eventType="touchUpInside" id="eGF-qA-fEH"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQR-h6-K1c">
                                             <rect key="frame" x="177.33333333333334" y="0.0" width="82.666666666666657" height="40"/>
@@ -87,6 +103,9 @@
                                                 <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 <color key="baseBackgroundColor" systemColor="systemBackgroundColor"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="buttonTouched:" destination="iN0-l3-epB" eventType="touchUpInside" id="9kY-oi-TSv"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </stackView>
@@ -102,6 +121,9 @@
                                                 <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 <color key="baseBackgroundColor" systemColor="systemBackgroundColor"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="buttonTouched:" destination="iN0-l3-epB" eventType="touchUpInside" id="oWK-DY-6aF"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="apa-V4-JTb">
                                             <rect key="frame" x="88.666666666666657" y="0.0" width="82.666666666666657" height="39.666666666666664"/>
@@ -112,6 +134,9 @@
                                                 <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 <color key="baseBackgroundColor" systemColor="systemBackgroundColor"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="buttonTouched:" destination="iN0-l3-epB" eventType="touchUpInside" id="0k6-g4-6NT"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aU0-FQ-6kq">
                                             <rect key="frame" x="177.33333333333334" y="0.0" width="82.666666666666657" height="39.666666666666664"/>
@@ -122,6 +147,9 @@
                                                 <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 <color key="baseBackgroundColor" systemColor="systemBackgroundColor"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="buttonTouched:" destination="iN0-l3-epB" eventType="touchUpInside" id="NfH-8T-wdX"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </stackView>
@@ -137,6 +165,9 @@
                                                 <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 <color key="baseBackgroundColor" systemColor="systemBackgroundColor"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="buttonTouched:" destination="iN0-l3-epB" eventType="touchUpInside" id="15A-tu-jAO"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCh-F1-cnf">
                                             <rect key="frame" x="86.666666666666657" y="0.0" width="86.666666666666657" height="39.666666666666664"/>
@@ -147,6 +178,9 @@
                                                 <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 <color key="baseBackgroundColor" systemColor="systemBackgroundColor"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="buttonTouched:" destination="iN0-l3-epB" eventType="touchUpInside" id="bNZ-mU-gxu"/>
+                                            </connections>
                                         </button>
                                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SuL-uv-pox">
                                             <rect key="frame" x="175.33333333333334" y="0.0" width="82.666666666666657" height="39.666666666666664"/>
@@ -157,6 +191,9 @@
                                                 <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 <color key="baseBackgroundColor" systemColor="systemBackgroundColor"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="buttonTouched:" destination="iN0-l3-epB" eventType="touchUpInside" id="eaN-Lf-QAC"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9i-T2-dTs">
                                             <rect key="frame" x="177.33333333333334" y="0.0" width="82.666666666666657" height="39.666666666666664"/>
@@ -166,6 +203,9 @@
                                                 <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 <color key="baseBackgroundColor" systemColor="systemBackgroundColor"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="buttonTouched:" destination="iN0-l3-epB" eventType="touchUpInside" id="f3i-DN-46Q"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </stackView>
@@ -200,6 +240,9 @@
                         <color key="baseForegroundColor" systemColor="labelColor"/>
                         <color key="baseBackgroundColor" systemColor="systemGray3Color"/>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="buttonTouched:" destination="iN0-l3-epB" eventType="touchUpInside" id="t6M-Zg-KuW"/>
+                    </connections>
                 </button>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOU-BM-y9X">
                     <rect key="frame" x="0.0" y="150" width="42" height="35"/>
@@ -218,6 +261,9 @@
                         <color key="baseForegroundColor" systemColor="labelColor"/>
                         <color key="baseBackgroundColor" systemColor="secondarySystemBackgroundColor"/>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="buttonTouched:" destination="iN0-l3-epB" eventType="touchUpInside" id="GKP-a5-d6D"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
@@ -232,6 +278,23 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="E9Y-ua-3qu" secondAttribute="bottom" constant="8" id="vrp-65-a2W"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="backButton" destination="u9i-T2-dTs" id="Xe2-dn-RFG"/>
+                <outlet property="clearButton" destination="SuL-uv-pox" id="Ihc-Ak-syu"/>
+                <outlet property="closeKeyboardButton" destination="E9Y-ua-3qu" id="VBS-gj-NTW"/>
+                <outlet property="decimalPointButton" destination="gyb-V0-E0L" id="6Xq-aj-XKg"/>
+                <outlet property="eightButton" destination="apa-V4-JTb" id="l4M-wH-K8e"/>
+                <outlet property="fiveButton" destination="9AR-24-rm1" id="iFr-ge-3Qo"/>
+                <outlet property="fourButton" destination="Rc0-9M-0g3" id="alq-df-Gi8"/>
+                <outlet property="invertSignButton" destination="LOU-BM-y9X" id="gn5-pm-atn"/>
+                <outlet property="nineButton" destination="aU0-FQ-6kq" id="ieE-mD-c2V"/>
+                <outlet property="oneButton" destination="Uk4-Hz-rWF" id="z9m-6U-Kov"/>
+                <outlet property="sevenButton" destination="ebA-dk-Y06" id="b8d-pV-FAP"/>
+                <outlet property="sixButton" destination="WQR-h6-K1c" id="Bz3-aY-vdu"/>
+                <outlet property="threeButton" destination="bQM-cN-C0T" id="lw0-Sg-Bgm"/>
+                <outlet property="twoButton" destination="FwQ-ou-48w" id="eYG-Gr-l1A"/>
+                <outlet property="zeroButton" destination="CCh-F1-cnf" id="uql-Rf-aHG"/>
+            </connections>
             <point key="canvasLocation" x="141.98473282442748" y="-200"/>
         </view>
     </objects>
@@ -243,16 +306,16 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray3Color">
-            <color red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray4Color">
-            <color red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
