@@ -89,10 +89,6 @@ public enum BFKey : Int
     private weak var _ownerEditor : BFNumericField? = nil;
     
     
-    
-    
-    
-    
     static public func Create(ownerEditor : BFNumericField )
     {
         let keyPad = Bundle.main.loadNibNamed("BFNumericKeyPad-Standard", owner: ownerEditor, options: .none)?[0] as? BFNumericKeyPad
@@ -228,9 +224,19 @@ public enum BFKey : Int
     private func setUp()
     {
         super.delegate = self
+        textAlignment = .right
         
     }
     
+    
+    private func playClick()
+    {
+        AudioServicesPlaySystemSound(1104)
+    }
+    
+    override public func caretRect(for position: UITextPosition) -> CGRect {
+        return CGRect.zero
+    }
     
     public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         
@@ -342,10 +348,12 @@ public enum BFKey : Int
                if(_localDelegate!.textField!(self, shouldChangeCharactersIn: NSRange(location: 0,length: text!.count), replacementString: String(newChar)))
                {
                    addCharacterToValue(newChar)
+                   playClick()
                }
             } else
             {
                 addCharacterToValue(newChar)
+                playClick()
             }
         } else
         {
@@ -354,6 +362,7 @@ public enum BFKey : Int
                 if(!text!.contains("."))
                 {
                     addCharacterToValue(".")
+                    playClick()
                 }
             } else if(text != nil)
             {
