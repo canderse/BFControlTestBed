@@ -104,8 +104,13 @@ public enum BFKey : Int
             ownerEditor.inputAssistantItem.allowsHidingShortcuts = true
             ownerEditor.inputAssistantItem.leadingBarButtonGroups = []
             ownerEditor.inputAssistantItem.trailingBarButtonGroups = []
-            keyPad?.decimalPointButton.isHidden = !ownerEditor.isDecimal
-            keyPad?.invertSignButton.isHidden = !ownerEditor.signButtonVisible
+            keyPad!.decimalPointButton.isHidden = !ownerEditor.isDecimal
+            keyPad!.invertSignButton.isHidden = !ownerEditor.signButtonVisible
+            keyPad!.backButton.isHidden = !ownerEditor.backSpaceEnabled
+            keyPad!.clearButton.isHidden = !keyPad!.backButton.isHidden
+            keyPad!.closeKeyboardButton.isHidden = false
+            keyPad!.backButton.isEnabled = !(ownerEditor.text?.isEmpty ?? false)
+            keyPad!.clearButton.isEnabled = keyPad!.backButton.isEnabled
         }
     }
     
@@ -134,7 +139,7 @@ public enum BFKey : Int
         case fourButton:
             _ownerEditor?.processKey(key: BFKey.four)
             break
-            case fiveButton:
+        case fiveButton:
             _ownerEditor?.processKey(key: BFKey.five)
             break
         case sixButton:
@@ -150,7 +155,7 @@ public enum BFKey : Int
             _ownerEditor?.processKey(key: BFKey.nine)
             break
         case clearButton:
-            _ownerEditor?.processKey(key: BFKey.zero)
+            _ownerEditor?.processKey(key: BFKey.clear)
             break
         case backButton:
             _ownerEditor?.processKey(key: BFKey.backSpace)
@@ -166,7 +171,12 @@ public enum BFKey : Int
         default:
             break
         }
+        backButton.isEnabled = !(_ownerEditor?.text?.isEmpty ?? false)
+        clearButton.isEnabled = backButton.isEnabled
     }
+    
+    
+    
 }
 
 @IBDesignable public class BFNumericField: UITextField,UITextFieldDelegate
@@ -196,6 +206,10 @@ public enum BFKey : Int
         self.init()
         setUp()
     }
+    
+    @IBInspectable public var isDecimal : Bool = false
+    @IBInspectable public var signButtonVisible : Bool = false
+    @IBInspectable public var backSpaceEnabled : Bool = false
     
     private var _localDelegate : (any UITextFieldDelegate)? = nil
     
@@ -317,9 +331,6 @@ public enum BFKey : Int
     }
 
     
-    @IBInspectable public var isDecimal : Bool = false
-    @IBInspectable public var signButtonVisible : Bool = false
-    
     public func processKey(key : BFKey)
     {
         if(key.rawValue >= 0)
@@ -344,13 +355,52 @@ public enum BFKey : Int
                 {
                     addCharacterToValue(".")
                 }
+            } else if(text != nil)
+            {
+                
+                if (key == BFKey.clear)
+                {
+                    text = ""
+                } else if(key == BFKey.backSpace && text != nil)
+                {
+                    text = String(text!.dropLast())
+                } else if(key == BFKey.invertSign)
+                {
+                    if(text!.contains("."))
+                    {
+                        if var numericValue = Double(text!)
+                        {
+                            numericValue = 0 - numericValue
+                            text = String(numericValue)
+                        }
+                    } else
+                    {
+                        if var numericValue = Int(text!)
+                        {
+                            numericValue = 0 - numericValue
+                            text = String(numericValue)
+                        }
+                    }
+                    
+                } else if(key == BFKey.closeKeyboard)
+                {
+                    endEditing(true)
+                }
             }
+            
         }
+
+
     }
+
+    
+  
+
+
     
     private func addCharacterToValue(_ newChar : Character)
     {
-        text = text! + String(newChar)  
+        text = text! + String(newChar)
     }
     
 }
