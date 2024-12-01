@@ -226,6 +226,8 @@ class BFEnhancedNumberField: UIControl {
 //            }
 //        }
         
+    
+    
    
     public var iconography : BFWingletType = .triangleFill
     {
@@ -328,18 +330,27 @@ class BFEnhancedNumberField: UIControl {
         _rightImageWidthConstraint.constant = _wingletWidth
     }
     
+    
+    @IBInspectable public var iconPointSize : Float = 10.0
+    {
+        didSet
+        {
+            setIconography()
+        }
+    }
+    
     private func setIconography()
     {
         if(iconography == .math)
         {
             if(iconDirection == .clockWide)
             {
-                _leftWingletImage.image = UIImage(systemName: "plus")
-                _rightWingletImage.image = UIImage(systemName: "minus")
+                _leftWingletImage.image = UIImage(systemName: "plus")?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: CGFloat(iconPointSize)))
+                _rightWingletImage.image = UIImage(systemName: "minus")?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: CGFloat(iconPointSize)))
             } else
             {
-                _leftWingletImage.image = UIImage(systemName: "minus")
-                _rightWingletImage.image = UIImage(systemName: "plus")
+                _leftWingletImage.image = UIImage(systemName: "minus")?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: CGFloat(iconPointSize)))
+                _rightWingletImage.image = UIImage(systemName: "plus")?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: CGFloat(iconPointSize)))
             }
             return
         }
@@ -348,12 +359,12 @@ class BFEnhancedNumberField: UIControl {
         {
             if(iconDirection == .clockWide)
             {
-                _leftWingletImage.image = UIImage(systemName: "chevron.up")
-                _rightWingletImage.image = UIImage(systemName: "chevron.down")
+                _leftWingletImage.image = UIImage(systemName: "chevron.up")?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: CGFloat(iconPointSize)))
+                _rightWingletImage.image = UIImage(systemName: "chevron.down")?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: CGFloat(iconPointSize)))
             } else
             {
-                _leftWingletImage.image = UIImage(systemName: "chevron.down")
-                _rightWingletImage.image = UIImage(systemName: "chevron.up")
+                _leftWingletImage.image = UIImage(systemName: "chevron.down")?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: CGFloat(iconPointSize)))
+                _rightWingletImage.image = UIImage(systemName: "chevron.up")?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: CGFloat(iconPointSize)))
             }
             return
         }
@@ -362,12 +373,12 @@ class BFEnhancedNumberField: UIControl {
         {
             if(iconDirection == .clockWide)
             {
-                _leftWingletImage.image = UIImage(systemName: "arrow.up")
-                _rightWingletImage.image = UIImage(systemName: "arrow.down")
+                _leftWingletImage.image = UIImage(systemName: "arrow.up")?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: CGFloat(iconPointSize)))
+                _rightWingletImage.image = UIImage(systemName: "arrow.down")?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: CGFloat(iconPointSize)))
             } else
             {
-                _leftWingletImage.image = UIImage(systemName: "arrow.down")
-                _rightWingletImage.image = UIImage(systemName: "arrow.up")
+                _leftWingletImage.image = UIImage(systemName: "arrow.down")?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: CGFloat(iconPointSize)))
+                _rightWingletImage.image = UIImage(systemName: "arrow.up")?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: CGFloat(iconPointSize)))
             }
             return
         }
@@ -376,12 +387,12 @@ class BFEnhancedNumberField: UIControl {
         {
             if(iconDirection == .clockWide)
             {
-                _leftWingletImage.image = UIImage(systemName: "arrowtriangle.up")
-                _rightWingletImage.image = UIImage(systemName: "arrowtriangle.down")
+                _leftWingletImage.image = UIImage(systemName: "arrowtriangle.up")?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: CGFloat(iconPointSize)))
+                _rightWingletImage.image = UIImage(systemName: "arrowtriangle.down")?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: CGFloat(iconPointSize)))
             } else
             {
-                _leftWingletImage.image = UIImage(systemName: "arrowtriangle.down")
-                _rightWingletImage.image = UIImage(systemName: "arrowtriangle.up")
+                _leftWingletImage.image = UIImage(systemName: "arrowtriangle.down")?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: CGFloat(iconPointSize)))
+                _rightWingletImage.image = UIImage(systemName: "arrowtriangle.up")?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: CGFloat(iconPointSize)))
             }
             return
         }
@@ -390,12 +401,12 @@ class BFEnhancedNumberField: UIControl {
         {
             if(iconDirection == .clockWide)
             {
-                _leftWingletImage.image = UIImage(systemName: "arrowtriangle.up.fill")
-                _rightWingletImage.image = UIImage(systemName: "arrowtriangle.down.fill")
+                _leftWingletImage.image = UIImage(systemName: "arrowtriangle.up.fill")?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: CGFloat(iconPointSize)))
+                _rightWingletImage.image = UIImage(systemName: "arrowtriangle.down.fill")?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: CGFloat(iconPointSize)))
             } else
             {
-                _leftWingletImage.image = UIImage(systemName: "arrowtriangle.down.fill")
-                _rightWingletImage.image = UIImage(systemName: "arrowtriangle.up.fill")
+                _leftWingletImage.image = UIImage(systemName: "arrowtriangle.down.fill")?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: CGFloat(iconPointSize)))
+                _rightWingletImage.image = UIImage(systemName: "arrowtriangle.up.fill")?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: CGFloat(iconPointSize)))
             }
             return
         }
