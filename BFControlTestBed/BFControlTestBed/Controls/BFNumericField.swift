@@ -228,7 +228,6 @@ public enum BFKey : Int
         
     }
     
-    
     private func playClick()
     {
         AudioServicesPlaySystemSound(1104)
@@ -398,13 +397,41 @@ public enum BFKey : Int
             }
             
         }
-
-
     }
 
     
   
-
+    public var intValue : Int
+    {
+        get
+        {
+            if let value = Int(text ?? "0")
+            {
+                return value
+            }
+            return 0
+        }
+        set(newValue)
+        {
+            text = String(newValue)
+        }
+    }
+    
+    public var doubleValue : Double
+    {
+        get
+        {
+            if let value = Double(text ?? "0")
+            {
+                return value
+            }
+            return 0
+        }
+        set(newValue)
+        {
+            text = String(newValue)
+        }
+    }
 
     
     private func addCharacterToValue(_ newChar : Character)

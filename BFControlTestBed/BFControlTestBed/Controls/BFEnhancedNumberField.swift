@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class BFEnhancedNumberField: UIControl {
 
@@ -21,6 +22,20 @@ class BFEnhancedNumberField: UIControl {
     case none,
         left,
         right
+    }
+    
+    public enum BFWingletDirection {
+        case clockWide,
+        antiClockwise
+    }
+    
+    public enum BFWingletType
+    {
+        case math,
+             chevron,
+             arrow,
+             triangle,
+             triangleFill
     }
     
     required override init(frame: CGRect) {
@@ -56,8 +71,7 @@ class BFEnhancedNumberField: UIControl {
     
         private func setUp()
         {
-//            backgroundColor = .yellow
-//            //  add the numeric editor
+
             _backingView.translatesAutoresizingMaskIntoConstraints = false;
             _backingView.clipsToBounds = true
             _editor.translatesAutoresizingMaskIntoConstraints = false;
@@ -95,18 +109,96 @@ class BFEnhancedNumberField: UIControl {
             
             backgroundColor = .clear
             setIconography()
-//            _backingView.backgroundColor = self.tintColor
-//           //  _editor.backgroundColor = self.backgroundColor
+
         }
+      
+    
+        private func playClick()
+        {
+            AudioServicesPlaySystemSound(1104)
+        }
+    
     
         private func leftWingletPressed()
         {
-            let xxx = 1
+            if(iconDirection == .antiClockwise)
+            {
+                
+                if(_editor.isDecimal)
+                {
+                    let newVal = _editor.doubleValue - 1.0
+                    if(!_editor.signButtonVisible && newVal < 0.0 )
+                    {
+                        _editor.doubleValue = 0.0
+                    } else
+                    {
+                        _editor.doubleValue = newVal;
+                        playClick()
+                    }
+                } else
+                {
+                    let newVal = _editor.intValue - 1
+                    if(!_editor.signButtonVisible && newVal < 0)
+                    {
+                        _editor.intValue = 0
+                    } else
+                    {
+                        _editor.intValue = _editor.intValue - 1;
+                        playClick()
+                    }
+                }
+                
+            } else
+            {
+                if(_editor.isDecimal)
+                {
+                    _editor.doubleValue = _editor.doubleValue + 1.0;
+                } else
+                {
+                    _editor.intValue = _editor.intValue + 1;
+                }
+                playClick()
+            }
         }
     
         private func rightWingletPressed()
         {
-            let xxx = 1
+            if(iconDirection == .antiClockwise)
+            {
+                if(_editor.isDecimal)
+                {
+                    _editor.doubleValue = _editor.doubleValue + 1.0;
+                } else
+                {
+                    _editor.intValue = _editor.intValue + 1;
+                }
+                playClick()
+            } else
+            {
+                if(_editor.isDecimal)
+                {
+                    let newVal = _editor.doubleValue - 1.0
+                    if(!_editor.signButtonVisible && newVal < 0.0 )
+                    {
+                        _editor.doubleValue = 0.0
+                    } else
+                    {
+                        _editor.doubleValue = newVal;
+                        playClick()
+                    }
+                } else
+                {
+                    let newVal = _editor.intValue - 1
+                    if(!_editor.signButtonVisible && newVal < 0)
+                    {
+                        _editor.intValue = 0
+                    } else
+                    {
+                        _editor.intValue = _editor.intValue - 1;
+                        playClick()
+                    }
+                }
+            }
         }
     
 //        override var tintColor: UIColor!
@@ -135,6 +227,22 @@ class BFEnhancedNumberField: UIControl {
 //        }
         
    
+    public var iconography : BFWingletType = .triangleFill
+    {
+        didSet
+        {
+            setIconography()
+        }
+    }
+    
+    public var iconDirection : BFWingletDirection = .antiClockwise
+    {
+        didSet
+        {
+            setIconography()
+        }
+    }
+    
     @IBInspectable public var editorBackgroundColor : UIColor?
     {
         get
@@ -222,13 +330,83 @@ class BFEnhancedNumberField: UIControl {
     
     private func setIconography()
     {
-        _leftWingletImage.image = UIImage(systemName: "plus")
-        _rightWingletImage.image = UIImage(systemName: "minus")
+        if(iconography == .math)
+        {
+            if(iconDirection == .clockWide)
+            {
+                _leftWingletImage.image = UIImage(systemName: "plus")
+                _rightWingletImage.image = UIImage(systemName: "minus")
+            } else
+            {
+                _leftWingletImage.image = UIImage(systemName: "minus")
+                _rightWingletImage.image = UIImage(systemName: "plus")
+            }
+            return
+        }
+        
+        if(iconography == .chevron)
+        {
+            if(iconDirection == .clockWide)
+            {
+                _leftWingletImage.image = UIImage(systemName: "chevron.up")
+                _rightWingletImage.image = UIImage(systemName: "chevron.down")
+            } else
+            {
+                _leftWingletImage.image = UIImage(systemName: "chevron.down")
+                _rightWingletImage.image = UIImage(systemName: "chevron.up")
+            }
+            return
+        }
+        
+        if(iconography == .arrow)
+        {
+            if(iconDirection == .clockWide)
+            {
+                _leftWingletImage.image = UIImage(systemName: "arrow.up")
+                _rightWingletImage.image = UIImage(systemName: "arrow.down")
+            } else
+            {
+                _leftWingletImage.image = UIImage(systemName: "arrow.down")
+                _rightWingletImage.image = UIImage(systemName: "arrow.up")
+            }
+            return
+        }
+        
+        if(iconography == .triangle)
+        {
+            if(iconDirection == .clockWide)
+            {
+                _leftWingletImage.image = UIImage(systemName: "arrowtriangle.up")
+                _rightWingletImage.image = UIImage(systemName: "arrowtriangle.down")
+            } else
+            {
+                _leftWingletImage.image = UIImage(systemName: "arrowtriangle.down")
+                _rightWingletImage.image = UIImage(systemName: "arrowtriangle.up")
+            }
+            return
+        }
+        
+        if(iconography == .triangleFill)
+        {
+            if(iconDirection == .clockWide)
+            {
+                _leftWingletImage.image = UIImage(systemName: "arrowtriangle.up.fill")
+                _rightWingletImage.image = UIImage(systemName: "arrowtriangle.down.fill")
+            } else
+            {
+                _leftWingletImage.image = UIImage(systemName: "arrowtriangle.down.fill")
+                _rightWingletImage.image = UIImage(systemName: "arrowtriangle.up.fill")
+            }
+            return
+        }
+        
+        
+        
     }
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        var touchPoint = touches.first?.location(in: self)
+        let touchPoint = touches.first?.location(in: self)
         if(touchPoint!.x < _editor.frame.minX)
         {
             _touchPlacement = .left
@@ -246,7 +424,7 @@ class BFEnhancedNumberField: UIControl {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        var touchPoint = touches.first?.location(in: self)
+        let touchPoint = touches.first?.location(in: self)
         if(touchPoint!.x < _editor.frame.minX)
         {
             if(_touchPlacement == .left)
