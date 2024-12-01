@@ -58,13 +58,34 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="backSpaceEnabled" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aQp-NE-bvV" customClass="BFEnhancedNumberField" customModule="BFControlTestBed" customModuleProvider="target">
+                                <rect key="frame" x="68" y="121" width="100" height="34"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="editorBackgroundColor">
+                                        <color key="value" systemColor="systemGray4Color"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="wingletsBackgroundColor">
+                                        <color key="value" systemColor="systemBrownColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" systemColor="systemBlueColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="windletsVisible" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <color key="tintColor" systemColor="systemMintColor"/>
                         <constraints>
                             <constraint firstItem="7Un-Mn-W7t" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="6Vc-nv-loj"/>
+                            <constraint firstItem="aQp-NE-bvV" firstAttribute="leading" secondItem="hOK-hn-dOc" secondAttribute="leading" id="78t-Ip-jRD"/>
                             <constraint firstItem="hOK-hn-dOc" firstAttribute="leading" secondItem="7Un-Mn-W7t" secondAttribute="trailing" constant="16" id="N5E-3Q-wEj"/>
+                            <constraint firstItem="aQp-NE-bvV" firstAttribute="height" secondItem="hOK-hn-dOc" secondAttribute="height" id="hAL-Fd-BzZ"/>
+                            <constraint firstItem="aQp-NE-bvV" firstAttribute="trailing" secondItem="hOK-hn-dOc" secondAttribute="trailing" id="hZX-wU-3wq"/>
                             <constraint firstItem="hOK-hn-dOc" firstAttribute="centerY" secondItem="7Un-Mn-W7t" secondAttribute="centerY" id="l4X-L6-Oby"/>
+                            <constraint firstItem="aQp-NE-bvV" firstAttribute="top" secondItem="hOK-hn-dOc" secondAttribute="bottom" constant="8" id="meZ-4f-fTr"/>
                             <constraint firstItem="7Un-Mn-W7t" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="uSh-tt-DTW"/>
                         </constraints>
                     </view>
@@ -74,15 +95,27 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-134" y="4"/>
+            <point key="canvasLocation" x="-135" y="3.7656903765690379"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.78039215689999997" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
