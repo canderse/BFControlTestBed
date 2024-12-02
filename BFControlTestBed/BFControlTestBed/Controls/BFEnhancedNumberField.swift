@@ -280,8 +280,94 @@ class BFEnhancedNumberField: UIControl {
                 _editor.textColor = newValue
             }
         }
+    
+    @IBInspectable public var font: UIFont?
+    {
+        get
+        {
+            return _editor.font
+        }
+        set(newValue)
+        {
+            _editor.font = newValue
+        }
+    }
+    
+    @IBInspectable public var placeholderText: String?
+    {
+        get
+        {
+            return _editor.placeholder
+        }
+        set(newValue)
+        {
+            _editor.placeholder = newValue
+        }
+    }
         
-        
+    @IBInspectable public var signButtonVisible: Bool
+    {
+        get
+        {
+            return _editor.signButtonVisible
+        }
+        set(newValue)
+        {
+            _editor.signButtonVisible = newValue
+        }
+    }
+    
+    
+    
+    
+    @IBInspectable public var isDecimal: Bool
+    {
+        get
+        {
+            return _editor.isDecimal
+        }
+        set(newValue)
+        {
+            _editor.isDecimal = newValue
+        }
+    }
+    
+    @IBInspectable var backSpaceEnabled: Bool
+    {
+        get
+        {
+            return _editor.backSpaceEnabled
+        }
+        set(newValue)
+        {
+            _editor.backSpaceEnabled = newValue
+        }
+    }
+    
+    public var intValue: Int
+    {
+        get
+        {
+            return _editor.intValue
+        }
+        set
+        {
+            _editor.intValue = newValue
+        }
+    }
+    
+    public var doubleValue: Double
+    {
+        get
+        {
+            return _editor.doubleValue
+        }
+        set
+        {
+            _editor.doubleValue = newValue
+        }
+    }
+    
     @IBInspectable public var delegate : UITextFieldDelegate?
         {
             get
