@@ -34,7 +34,7 @@ class BFTextField: UITextField,UITextFieldDelegate {
         setUp()
     }
     
-    @IBInspectable textLimit : int = 0;
+    @IBInspectable var textLimit : Int = 0;
     
     private var _localDelegate : (any UITextFieldDelegate)? = nil
     
