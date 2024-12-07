@@ -39,7 +39,8 @@ class BFPickListField: UIButton {
         {
             if(picklistValuesIntKey != nil)
             {
-                
+                picklistValuesStringKey = nil
+                buildMenu()
             }
         }
     }
@@ -51,6 +52,7 @@ class BFPickListField: UIButton {
             if(picklistValuesStringKey != nil)
             {
                 picklistValuesIntKey = nil
+                buildMenu()
             }
         }
     }
@@ -92,6 +94,7 @@ class BFPickListField: UIButton {
             {
                 return picklistValuesStringKey![_selectedIndex].key
             }
+            return nil;
         }
         set(newValue)
         {
@@ -157,6 +160,7 @@ class BFPickListField: UIButton {
             {
                 return picklistValuesStringKey![_selectedIndex].value
             }
+            return nil
         }
     }
     
@@ -164,6 +168,5 @@ class BFPickListField: UIButton {
     {
         sendActions(for: .valueChanged)
     }
-    
 
 }
